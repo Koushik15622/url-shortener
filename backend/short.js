@@ -2,7 +2,7 @@ const express = require('express');
 const validurl = require('valid-url');
 const key = require('short-id');
 const Url = require('../db/config');
-const baseurl = "https://linx-urlz.herokuapp.com/";
+const baseurl = "https://linx-urlz.herokuapp.com";
 //console.log(baseurl+"test")
 var shorturl;
 module.exports.shorturl= async(req,res)=>{
