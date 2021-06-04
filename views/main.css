@@ -1,0 +1,40 @@
+form{
+    background-color: black;
+    border-radius: 10px;
+    margin: 3%;
+}
+.form-group{
+    margin-top:4%;
+}
+#hlbl{
+    margin-left: 5%;
+    color: rgb(250, 247, 242);
+    font-family: 'Bree Serif';
+}
+#exampleInputEmail1{
+    width: 80%;
+    margin-left: 5%;
+    font-family: 'Questrial';
+}
+.btn {
+    margin-left: 5%;
+    font-family: 'Montserrat';
+}
+#crdts{
+    font-family: 'Bree Serif';
+    color:rgb(216, 250, 67);
+}
+#hurl{
+    text-align: center;
+    background-color: blanchedalmond; 
+    border-radius: 10px; 
+    margin:3%;
+    float:bottom;
+}
+#lbl{
+    font-family: 'Montserrat';
+}
+#h1{
+    font-family: 'Questrial'; 
+    color: rgb(83, 83, 248);
+}

@@ -7,39 +7,49 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat&family=Questrial&display=swap" rel="stylesheet"> 
-    <title>Linx</title>
+    <link rel="stylesheet" href="/views/main.css">
+    <title>LinX - Free URL shortner</title>
 </head>
 <body>
-    <form action="/short" method ="POST" style="background-color: black;border-radius: 10px;margin: 3%;"  onsubmit ="func()">
-        <div class="form-group" style="margin-top:4%;">
-          <label for="exampleInputEmail1" style="margin-left: 5%;color: rgb(250, 247, 242);font-family: 'Bree Serif';"><h1>LinX - Free URL shortner</h1></label><br><br>
-          <input name="orgurl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter long URL" style="width: 80%;margin-left: 5%;font-family: 'Questrial';">
+    <form action="/short" method ="POST" onsubmit ="func()">
+        <div class="form-group">
+          <label id="hlbl" for="exampleInputEmail1"><h1>LinX - Free URL shortner</h1></label><br><br>
+          <input name="orgurl" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter long URL">
           </div>
           <br>
-        <button type="submit" class="btn btn-primary" style="margin-left: 5%;font-family: 'Montserrat';">Shorten</button><br><br>
-        <div style="text-align: center;"><a href="https://koushikpln.herokuapp.com/"><h4 style="font-family: 'Bree Serif';color:rgb(216, 250, 67);">Developed by Koushik PLN</h4></a></div>
+        <button type="submit" class="btn btn-primary">Shorten</button><br><br>
+        <div style="text-align: center;"><a href="https://koushikpln.herokuapp.com/"><h4 id ="crdts">Developed by Koushik PLN</h4></a></div>
         <br>
       </form>
     <br>
-    <div  id="hurl" style="text-align: center; background-color: blanchedalmond; border-radius: 10px; margin:3%;float:bottom;">
+    <div  id="hurl">
       <br>
-      <h4 id="lbl" style="font-family: 'Montserrat';"><strong>The short URL is:</strong></h4>
-      <h4 id="h1" style="font-family: 'Questrial'; color: rgb(83, 83, 248);" ><%=url %></h4>
+      <h4 id="lbl"><strong>The short URL is:</strong></h4>
+      <h4 id="h1" ><%=url %></h4><br>
+      <div style="margin-right: 3%;" ><span><button onclick="fcopy()" class="btn btn-primary">Copy Link</button></span></div>
       <br>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>
       var t=$('#h1').html()
       if(t==''){
-           $("#hurl").hide()
+          $("#hurl").hide()
         }
       else if(t=="Invalid URL"){
-           $("#lbl").hide();
+          $("#lbl").hide();
         }
       function func(){
-      $("#hurl").show();
-    }
-    </script>   
-    
+          $("#hurl").show();
+        }
+      function fcopy(){
+      var cpt = document.getElementById("h1").innerText;
+      var temp = document.createElement("textarea");
+      document.body.appendChild(temp);
+      temp.value = cpt;
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+}
+    </script>
 </body>
 </html>
