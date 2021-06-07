@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
         type:Date,
         default:Date.now
     },
-    createdAt: { type: Date, expires: 60*60*24 , default: Date.now }
+    createdAt: { type: Date, expires: 86400 , default: Date.now }
 },{timestamps:true});
 //schema.index({createdAt: 1},{expireAfterSeconds: 3600});
 const Url = mongoose.model('urls_datas',schema);

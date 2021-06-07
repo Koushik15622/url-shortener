@@ -17,12 +17,8 @@ app.use('/',require('./backend/redirect'));
 app.post('/short',async (req,res)=>{
    await shturl.shorturl(req,res);
    fnlurl=shturl.fnlurl.shorturl;
-   console.log(fnlurl);
    res.render('main',{url:fnlurl});
 });
-app.get('/urls',function(req,res){
-    res.send(fnlurl);
-})
 
 app.listen(port,function(){
     console.log("started server on "+port);
